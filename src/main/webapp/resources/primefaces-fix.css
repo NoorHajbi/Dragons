@@ -1,0 +1,91 @@
+.ui-menu {
+	background-color: transparent !important;
+	border: inherit !important;
+}
+
+.ui-menu .ui-menu-list, .ui-menuitem, .ui-menuitem-link, .ui-menuitem-text, .ui-menuitem-icon {
+	color: inherit !important;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+	text-align: left;
+	background-color: var(--card-header-bg) !important;
+	color: var(--card-header-fg) !important;
+}
+
+.ui-panelgrid .ui-panelgrid-cell.ui-widget-header {
+	background-color: var(--card-header-bg) !important;
+	color: var(--card-header-fg) !important;
+}
+
+.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled {
+	opacity: 0.5;
+}
+
+.ui-panelgrid td>.ui-outputlabel {
+	margin: 0px;
+	display: block;
+	min-width: 100px;
+	margin: 0px;
+	color: var(--label-fg) !important;
+	background-color: var(--label-bg);
+}
+
+.ui-panelgrid td>.ui-inputfield {
+	display: block;
+	width: 100%;
+	min-width: 250px;
+	margin: 0px;
+	color: var(--input-fg) !important;
+	background-color: var(--input-bg);
+}
+.ui-chkbox{
+}
+
+.ui-datatable {
+	width: fit-content !important;
+	margin: auto;
+}
+
+.ui-datatable thead th {
+	background-color: var(--table-header-bg) !important;
+	color: var(--table-header-fg) !important;
+	padding: 4px!important;
+}
+
+.ui-datatable table {
+	margin: auto;
+	width: auto !important;
+}
+
+.ui-datatable .ui-datatable-data>tr>td {
+	padding: 4px;
+}
+
+.ui-datatable .ui-datatable-data>tr.ui-datatable-even {
+	background-color: var(--table-data-event-bg);
+	color: var(--table-data-event-fg);
+}
+
+.ui-datatable .ui-datatable-data>tr.ui-datatable-odd {
+	background-color: var(--table-data-odd-bg);
+	color: var(--table-data-odd-fg);
+}
+
+.ui-datatable .ui-datatable-data>tr.ui-state-highlight {
+	color: #2366c3 !important;
+	background: var(--main-content-bg) !important;
+    background-image: none;
+}
+
+.ui-icon {
+}
+
+
+.ui-button.ui-button-icon-only .ui-button-text{
+padding: 0px;	
+}
+
+html .ui-state-disabled {
+    pointer-events: all;
+}

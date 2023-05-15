@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:jk="http://jalalkiswani.com/jsf"
+	xmlns:p="http://primefaces.org/ui" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:composition template="/WEB-INF/templates/default.xhtml">
+	<ui:define name="contents">
+		<div style="width:100%">
+			<div class="title" align="center">
+				<h5>Something wrong happened, please try again.</h5>
+				<a href="#" onclick="window.history.back()" class="btn btn-info"> <i class="fa fa-arrow-left" /> Back</a> 
+				<a href="/" class="btn btn-info"> <i class="fa fa-home" /> Home</a>
+			</div>
+			<hr />
+			<label>Error Message:</label> <span>#{pfExceptionHandler.message} </span>
+			<ui:fragment rendered="#{true}">
+				<p:panel header="Error Technical Details" toggleableHeader="true" toggleable="true" collapsed="true">
+					<h3>Technical description for the problem:</h3>
+					<h:outputText value="Type of the exception: #{pfExceptionHandler.type}:" />
+					<h:outputText value="Throwable instance: #{pfExceptionHandler.exception}" />
+					<h:outputText value="Exception message: #{pfExceptionHandler.message}" />
+					<h:outputText value="Stack trace: #{pfExceptionHandler.formattedStackTrace}" escape="false" />
+				</p:panel>
+			</ui:fragment>
+		</div>
+	</ui:define>
+
+</ui:composition>
+</html>

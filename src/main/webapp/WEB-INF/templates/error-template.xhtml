@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:p="http://primefaces.org/ui">
+<h:head>
+	
+</h:head>
+<h:body>
+	<p:panel>
+		<f:facet name="header">
+			Error Page
+		</f:facet>
+		<div align="center">
+			<h1>
+				<a href="#" onclick="history.back()" class="btn btn-info">Retry Page</a>
+				<span> | </span>
+				<a href="#{request.contextPath}/" class="btn btn-info">Back to Home</a>
+			</h1>
+		</div>
+		<ui:insert name="contents">main-contents-goes here</ui:insert>
+		<f:facet name="footer">
+		</f:facet>
+	</p:panel>
+
+</h:body>
+</html>

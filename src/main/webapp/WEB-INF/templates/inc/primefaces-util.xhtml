@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition>
+	<p:confirmDialog global="true">
+		<h:form>
+			<p:commandButton value="Yes" type="button"
+				styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+			<p:commandButton value="No" type="button"
+				styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+		</h:form>
+	</p:confirmDialog>
+	<h:form>
+		<p:autoUpdate />
+		<p:growl life="1000" />
+	</h:form>
+
+	<ui:remove>
+		<p:ajaxStatus onstart="PF('statusDialog').show()"
+			onsuccess="PF('statusDialog').hide()" />
+	</ui:remove>
+
+	<p:dialog widgetVar="statusDialog" dynamic="true" modal="true"
+		draggable="false" closable="false" resizable="false"
+		showHeader="false" styleClass="loading-dialog">
+		<div class="loader"></div>
+	</p:dialog>
+
+	<p:dialog dynamic="false" widgetVar="dlgError" visible="false"
+		header="Error communicating with the server" modal="true">
+		<div class="text text-danger">
+			<p>
+				Error communicating with the server. Please <a href="."> <b>refresh</b>
+				</a> the page and try again.
+			</p>
+			<p>If the problem persists, please contact the development team</p>
+		</div>
+	</p:dialog>
+	<p:tooltip />
+	<script>
+		$(document).on("pfAjaxError", function(event, xhr, options) {
+			//PF('statusDialog').hide();
+			PF('dlgError').show();
+		});
+	</script>
+</ui:composition>
+</html>

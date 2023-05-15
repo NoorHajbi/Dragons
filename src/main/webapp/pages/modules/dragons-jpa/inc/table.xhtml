@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:jk="http://jalalkiswani.com/jsf"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:composition>
+	<h:form id="dragonsTable">
+		<p:dataTable value="#{mbDragonsJPA.modelList}" var="model"
+			editable="true" editMode="cell" styleClass="dragons-table"
+			rowKey="#{model.id}" paginatorPosition="bottom" rows="10"
+			rowIndexVar="row" paginator="true">
+			<p:ajax event="cellEdit" listener="#{mbDragonsJPA.updateLocation}" />
+			<p:column headerText="#" styleClass="sequence">#{row+1}</p:column>
+
+			<p:column headerText="ID" sortBy="#{model.id}">
+				<h:outputText value="#{model.id}" />
+			</p:column>
+
+			<p:column headerText="Name" sortBy="#{model.name}">
+				<h:outputText value="#{model.name}" />
+			</p:column>
+
+			<p:column headerText="Location" sortBy="#{model.location}"
+				editable="true">
+				<p:cellEditor>
+					<f:facet name="output">
+						<h:outputText value="#{model.location}" />
+					</f:facet>
+					<f:facet name="input">
+						<p:inputText value="#{model.location}" />
+					</f:facet>
+				</p:cellEditor>
+			</p:column>
+
+			<p:column headerText="Actions">
+				<p:commandButton value="Delete"
+					action="#{mbDragonsJPA.delete(model.id)}" update="@form" ajax="true" />
+			</p:column>
+		</p:dataTable>
+
+
+		<br />
+	</h:form>
+</ui:composition>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:jk="http://jalalkiswani.com/jsf"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:of="http://omnifaces.org/ui">
+<ui:composition template="/WEB-INF/templates/default.xhtml">
+	<ui:define name="page-title">
+		Dragons JDBC
+	</ui:define>
+
+	<ui:define name="contents">
+
+		<ui:include src="inc/top-actions.xhtml" />
+		<p:dialog header="" modal="true" widgetVar="frm" id="frm"
+			closeOnEscape="true" width="900" height="600">
+			<ui:include src="inc/form.xhtml" />
+		</p:dialog>
+		<ui:include src="inc/table.xhtml" />
+	</ui:define>
+</ui:composition>
+</html>

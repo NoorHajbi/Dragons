@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:jk="http://jalalkiswani.com/jsf"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:composition>
+	<h:form>
+		<div class="page-header">
+			<div class="title">Dragons JPA Management</div>
+			<div class="actions">
+				<p:commandLink actionListener="#{mbDragonsJPA.setModel(null)}"
+					oncomplete="PF('frm').show()">
+					<i class="fa fa-plus text-success" />
+				</p:commandLink>
+
+			</div>
+		</div>
+	</h:form>
+</ui:composition>
+</html>

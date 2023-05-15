@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:jk="http://jalalkiswani.com/jsf"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:composition>
+
+	<h:form id="frmDragon">
+		<h:panelGrid columns="2">
+			<h:outputLabel for="name" value="Name: " />
+			<h:panelGroup>
+				<p:inputText id="name" value="#{mbDragons.selectedModel.name}"
+					required="true" />
+				<br />
+
+				<br />
+			</h:panelGroup>
+			<h:outputLabel for="location" value="Location:  " />
+			<p:inputText id="location"
+				value="#{mbDragons.selectedModel.location}" required="true" />
+		</h:panelGrid>
+		<br />
+
+		<p:commandButton value="Save" action="#{mbDragons.add}"
+			style="    left: 8vw;
+		" process="@form" update=":dragonsTable"
+			oncomplete="PF('frm').hide();" />
+
+		</h:form>
+
+	<br />
+
+</ui:composition>
+</html>
